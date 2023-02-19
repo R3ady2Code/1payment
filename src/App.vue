@@ -1,28 +1,19 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+	<b-container>
+		<SearchPanel />
+		<CarsTable />
+	</b-container>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import CarsTable from './components/CarsTable'
+import SearchPanel from './components/SearchPanel.vue'
 
 export default {
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-};
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+	name: 'App',
+	components: {
+		CarsTable,
+		SearchPanel,
+	},
 }
-</style>
+</script>
