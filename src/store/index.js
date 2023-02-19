@@ -19,7 +19,6 @@ export default new Vuex.Store({
 				to: '',
 			},
 		},
-		sortBy: 'id',
 	},
 	getters: {
 		getCars(state) {
@@ -28,16 +27,10 @@ export default new Vuex.Store({
 		getFilters(state) {
 			return state.filterValues
 		},
-		getSort(state) {
-			return state.sortBy
-		},
 	},
 	mutations: {
 		setFilters(state, action) {
 			state.filterValues = action
-		},
-		setSort(state, action) {
-			state.sortBy = action
 		},
 	},
 	actions: {},
