@@ -14,6 +14,8 @@
 				v-model="filters.age.from"
 				type="number"
 				placeholder="from"
+				:min="2000"
+				:max="3000"
 			></b-form-input>
 		</b-col>
 		<b-col :sm="1">
@@ -21,6 +23,8 @@
 				v-model="filters.age.to"
 				type="number"
 				placeholder="to"
+				:min="2000"
+				:max="3000"
 			></b-form-input>
 		</b-col>
 	</b-row>
