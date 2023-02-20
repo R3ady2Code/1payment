@@ -15,8 +15,8 @@ export default new Vuex.Store({
 			id: '',
 			brand: '',
 			age: {
-				from: '',
-				to: '',
+				from: null,
+				to: null,
 			},
 		},
 	},

@@ -8,24 +8,16 @@
 			<label class="mb-2">brand</label>
 			<b-form-input v-model="filters.brand" type="text"></b-form-input>
 		</b-col>
-		<b-col :sm="1">
-			<label class="mb-2">age</label>
-			<b-form-input
+		<b-col cols="2">
+			<label class="mb-2">age from</label>
+			<b-form-select
 				v-model="filters.age.from"
-				type="number"
-				placeholder="from"
-				:min="2000"
-				:max="3000"
-			></b-form-input>
+				:options="years"
+			></b-form-select>
 		</b-col>
-		<b-col :sm="1">
-			<b-form-input
-				v-model="filters.age.to"
-				type="number"
-				placeholder="to"
-				:min="2000"
-				:max="3000"
-			></b-form-input>
+		<b-col cols="2">
+			<label class="mb-2">to</label>
+			<b-form-select v-model="filters.age.to" :options="years"></b-form-select>
 		</b-col>
 	</b-row>
 </template>
@@ -40,6 +32,14 @@ export default {
 			set() {
 				this.$store.commit('setFilter', { ...this.filters })
 			},
+		},
+		years() {
+			const result = Array.from(
+				{ length: 50 },
+				(_, index) => new Date().getFullYear() - index
+			)
+			result.unshift({ value: '', text: '' })
+			return result
 		},
 	},
 }
