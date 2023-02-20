@@ -9,15 +9,21 @@
 			<b-form-input v-model="filters.brand" type="text"></b-form-input>
 		</b-col>
 		<b-col cols="2">
-			<label class="mb-2">age from</label>
-			<b-form-select
-				v-model="filters.age.from"
-				:options="years"
-			></b-form-select>
+			<label class="mb-2">age</label>
+			<b-form-select v-model="filters.age.from" :options="years">
+				<template #first>
+					<b-form-select-option :value="null" disabled
+						>from</b-form-select-option
+					>
+				</template>
+			</b-form-select>
 		</b-col>
 		<b-col cols="2">
-			<label class="mb-2">to</label>
-			<b-form-select v-model="filters.age.to" :options="years"></b-form-select>
+			<b-form-select v-model="filters.age.to" :options="years">
+				<template #first>
+					<b-form-select-option :value="null" disabled>to</b-form-select-option>
+				</template>
+			</b-form-select>
 		</b-col>
 	</b-row>
 </template>
